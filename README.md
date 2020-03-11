@@ -9,25 +9,25 @@ Credit to [edureka.co](https://www.edureka.co/blog/git-tutorial/)
 
 ## ၁။ အခြေခံ command
 
-#### Git Project (သို့) repository ကို clone လုပ်နည်း
+#### Git repository အသစ် clone နည်း
 > `git clone <repository>`
 
-#### Local မှာရှိသော branch တခုမှ branch တစ်ခုသို့ပြောင်:နည်း
-> `git checkout <branchname>`
+#### Local မှာရှိသော branch တခုမှတစ်ခုသို့ပြောင်:နည်း
+> `git checkout -b <branchname>`
 
-#### Git branch ကိုတခြားအမည်ဖြစ် checkout လုပ်နည်း
-> `git checkout -b <branchnameအသစ်> <remote_branch>`
+#### Branch အသစ် checkout လုပ်နည်း
+> `git checkout -b <new_branchname> <remote_branch>`
 >> ##### ဥပမာ:
->> `git checkout -b feature/myfeature origin/dev`
+>> `git checkout -b feature/my_new_branch origin/dev`
 
-#### Git repository ကနေနောက်ဆုံး branch အသစ်တွေကို fetch လုပ်နည်း
+#### Remote ကနေေအသစ်ဆုံး branch & tag အသစ်ရယူနည်း
 > `git fetch -p`
 >> *`-p`: prune (merged လုပ်ပြီးသော branch ကိုဖြတ်တောက်ပေ:တယ်)
 
-#### Git pull
+#### Remote ကနေအသစ်ဆုံ: source code ကို pull လုပ်နည်း
 > `git pull`
 
-#### Stage မလုပ်ခင်အပြောင်းအလဲရှိသောဖိုင်များကိုကြည့်နည်း
+#### အပြောင်းအလဲလုပ်ထားသောဖိုင် (သို့) ဖိုင်အသစ်ကြည့်နည်း
 > `git status` (သို့) `git status -u` 
 >> *`-u`: untracked file (git ကအသိအမှတ်မပြုသေးသောဖိုင်(သို့)ဖိုင်အသစ်)
 
@@ -40,10 +40,10 @@ Credit to [edureka.co](https://www.edureka.co/blog/git-tutorial/)
 #### Git commit လုပ်နည်း
 > `git commit -m "first commit message"`
 
-#### Git commit လုပ်ပြီး(push မလုပ်ခင်)၊ commit message ကိုပြန်ပြင်နည်း
+#### Git push မလုပ်ခင် commit message ကိုပြန်ပြင်နည်း
 > `git commit --amend -m "correct commit message"`
 
-#### Local branch အသစ်ကို Git repository ပေါ်တင်နည်း (သို့) checkout လုပ်ထားသော repository သို့ push နည်း
+#### Git push လုပ်နည်း
 > `git push origin <branchname>` 
 
 #### Remote & Local branch အားလုံးကိုကြည့်နည်း
@@ -75,22 +75,22 @@ Credit to [edureka.co](https://www.edureka.co/blog/git-tutorial/)
 #### Git reset လုပ်ပြီးသောအခါ Git commit id ပြန်ရှာနည်း
 > `git reflog`
 >
-> ##### reflog: reference log ကိုဆိုလိုသည်
+> ##### reflog: reference log ကိုဆိုလိုတယ်
 
-#### Local မှာရှိသော untracked file ကိုဖျက်ခြင်း
+#### Local မှာရှိတဲ untracked file ကိုဖျက်ခြင်း
 > Step 1: `git clean -n` (အရင်ဆုံးဖျက်မည့်ဖိုင်ကို list လုပ်ပြီး)
 >
 > Step 2: `git clean -f` (ဖိုင်ကို delete လုပ်)
 >
 > **Note:** directory/folder ကိုဖျက်လိုလျှင် `git clean -f -d`
 
-#### မှားယွင်းပြီး commit လုပ်ပြီး၊ Commit ကို revert လုပ်နည်း
+#### Commit revert လုပ်နည်း
 > `git revert <commit_id>`
 
-#### Git commit message log ကြည့်နည်း
+#### Git commit log ကြည့်နည်း
 > `git log --graph --oneline --decorate`
 
-#### Local မှာ branch တွေများလာပြီ:၊ merged လုပ်ပြီးသော branch များကိုရှင်းချင်သောအခါ
+#### Local မှာ branch တွေများလာသောအခါ၊ merged လုပ်ပြီးသော branch များကိုရှင်းနည်း
 > `git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d`
 >> `git branch --merged` : merged လုပ်ပြီးသော branch များကို list လုပ်
 >>
